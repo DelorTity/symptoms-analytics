@@ -14,5 +14,9 @@ public class AnalyticsCounter {
 		ISymptomsCount counter = new SymptomsCounter();
 		Map<String, Integer> symptomsWithOccurrences = counter.countSymptoms(symptoms);
 
+		//ecriture dans le fichier de sortie
+		ISymptomWrite symptomWrite = new WriteSymptomDataToFile("result.out");
+		symptomWrite.writeToFile(symptomsWithOccurrences);
+
 	}
 }
